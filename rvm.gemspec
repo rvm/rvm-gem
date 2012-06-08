@@ -13,6 +13,7 @@ Gem::Specification.new do |spec|
   spec.homepage    = 'https://rvm.beginrescueend.com/'
   spec.summary     = 'RVM Ruby Gem Library'
   spec.description = 'RVM ~ Ruby Environment Manager ~ Ruby Gem Library.'
+  spec.license     = "MIT"
 
   spec.add_development_dependency 'rake'
   spec.add_development_dependency 'minitest'
