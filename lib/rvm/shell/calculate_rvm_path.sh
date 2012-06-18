@@ -11,7 +11,7 @@ fi
 # Load extra files.
 
 [[ -s ~/.rvmrc ]] && source ~/.rvmrc >/dev/null 2>&1
-[[ -s /etc/.rvmrc ]] && source /etc/rvmrc >/dev/null 2>&1
+[[ -s /etc/rvmrc ]] && source /etc/rvmrc >/dev/null 2>&1
 
 if [[ -n "$rvm_path" ]]; then
   echo "$rvm_path"
