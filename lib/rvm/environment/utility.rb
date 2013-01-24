@@ -52,23 +52,25 @@ module RVM
     # Lets you build a command up, without needing to see the output.
     # As an example,
     #
-    #  rvm :use, "ree@rails3", :install => true
+    #  rvm :use, "ree@rails3", :install => true, :rvm_by_path => true
     #
     # Will call the following:
     #
-    #  rvm use ree@rails3 --install
+    #  $rvm_path/bin/rvm use ree@rails3 --install
     #
     def rvm(*args)
       options = extract_options!(args)
       silent = options.delete(:silent)
+      rvm_by_path = options.delete(:rvm_by_path)
       rearrange_options!(args, options)
       args += hash_to_options(options)
       args.map! { |a| a.to_s }
 
+      program = rvm_by_path ? "#{self.class.default_rvm_path}/bin/rvm" : "rvm"
       if silent
-        run_silently('rvm', *args)
+        run_silently(program, *args)
       else
-        run('rvm', *args)
+        run(program, *args)
       end
     end
 
