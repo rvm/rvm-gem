@@ -50,13 +50,13 @@ module RVM
     end
 
     # Lets you build a command up, without needing to see the output.
-    # As an example,
+    # Examples:
     #
-    #  rvm :use, "ree@rails3", :install => true, :rvm_by_path => true
+    #  rvm :use, "ree@rails3", :install => true
+    #  > rvm use ree@rails3 --install
     #
-    # Will call the following:
-    #
-    #  $rvm_path/bin/rvm use ree@rails3 --install
+    #  rvm :install, "ree@rails3", :rvm_by_path => true
+    #  > $rvm_path/bin/rvm install ree@rails3
     #
     def rvm(*args)
       options = extract_options!(args)
