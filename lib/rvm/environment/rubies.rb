@@ -18,17 +18,20 @@ module RVM
 
     # Changes the ruby string for the current environment.
     #
-    # env.use '1.9.2' # => nil
-    # env.use 'ree' # => nil
+    # env.use '1.9.2' # => true
+    # env.use 'ree' # => true
+    # env.use 'foo' # => false
     #
     def use(ruby_string, opts = {})
       ruby_string = ruby_string.to_s
       result = rvm(:use, ruby_string)
-      if result.successful?
+      successful = result.successful?
+      if successful
         @environment_name = ruby_string
         @expanded_name    = nil
         use_env_from_result! result if opts[:replace_env]
       end
+      successful
     end
 
     # Like use but with :replace_env defaulting to true.
