@@ -1,3 +1,15 @@
+# 1.11.3.8 / 2013-05-29
+
+* correctly refers to :rvm_path config, merged #13
+
+# 1.11.3.7 / 2013-03-31
+
+* add return value to RVM.use, merged #12
+
+# 1.11.3.6 / 2013-01-24
+
+* Add :rvm_by_path option to #rvm method to invoke rvm with full path, merged #11
+
 # 1.11.3.5 / 2012-07-02
 
 * fix gemset use, fix #5, merged #9

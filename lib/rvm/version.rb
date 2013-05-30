@@ -1,3 +1,3 @@
 module RVM
-  Version = "1.11.3.7"
+  Version = "1.11.3.8"
 end
