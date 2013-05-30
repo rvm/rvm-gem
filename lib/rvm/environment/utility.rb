@@ -66,7 +66,8 @@ module RVM
       args += hash_to_options(options)
       args.map! { |a| a.to_s }
 
-      program = rvm_by_path ? "#{self.class.default_rvm_path}/bin/rvm" : "rvm"
+      rvm_path = config_value_for(:rvm_path, self.class.default_rvm_path, false)
+      program = rvm_by_path ? "#{rvm_path}/bin/rvm" : "rvm"
       if silent
         run_silently(program, *args)
       else
