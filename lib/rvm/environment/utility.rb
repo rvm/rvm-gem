@@ -55,19 +55,21 @@ module RVM
     #  rvm :use, "ree@rails3", :install => true
     #  > rvm use ree@rails3 --install
     #
-    #  rvm :install, "ree@rails3", :rvm_by_path => true
-    #  > $rvm_path/bin/rvm install ree@rails3
+    #  rvm :install, "ree@rails3", :rvm_by_path => true, :rubygems_version => "1.8.23"
+    #  > rvm_rubygems_version=1.8.23 $rvm_path/bin/rvm install ree@rails3
     #
     def rvm(*args)
       options = extract_options!(args)
       silent = options.delete(:silent)
       rvm_by_path = options.delete(:rvm_by_path)
+      rubygems_version = options.delete(:rubygems_version)
       rearrange_options!(args, options)
       args += hash_to_options(options)
       args.map! { |a| a.to_s }
 
       rvm_path = config_value_for(:rvm_path, self.class.default_rvm_path, false)
       program = rvm_by_path ? "#{rvm_path}/bin/rvm" : "rvm"
+      program = "rvm_rubygems_version=#{rubygems_version} #{program}" if rubygems_version
       if silent
         run_silently(program, *args)
       else
