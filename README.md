@@ -1,6 +1,6 @@
 # rvm
 
-https://rvm.beginrescueend.com/
+http://rvm.io/
 
 ## Description
 

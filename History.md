@@ -1,3 +1,7 @@
+# 1.11.3.9 / 2014-01-28
+
+* Support for :rubygem_version option to #rvm helper, merged #14
+
 # 1.11.3.8 / 2013-05-29
 
 * correctly refers to :rvm_path config, merged #13
