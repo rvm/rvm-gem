@@ -20,7 +20,7 @@ Most common ways to use RVM from ruby process
 
 The most common use for this gem is in Passenger integration:
 
-- https://rvm.beginrescueend.com/integration/passenger/
+- https://rvm.io/integration/passenger/
 
 ## Development
 
